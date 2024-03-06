@@ -1,0 +1,13 @@
+<ion-card>
+  <img alt="Imagen del Heroe" [src]="[unHeroe.img]" />
+  <ion-card-header>
+    <ion-card-title>{{ unHeroe.nombre}}</ion-card-title>
+    <ion-card-subtitle>{{ unHeroe.casa}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{ unHeroe.bio}}
+  </ion-card-content>
+</ion-card>
+
+<ion-button (click)="irFotos(unHeroe.id)">Galería De Fotos</ion-button>

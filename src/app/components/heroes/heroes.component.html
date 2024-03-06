@@ -1,0 +1,22 @@
+<!-- 
+<p>
+  heroes works!
+</p>
+-->
+<ion-list>
+  <ion-item *ngFor="let unHeroe of unosHeroes; let in dex">
+
+    <ion-item *ngIf="tipo === 'lista'">
+      <ion-avatar slot="start">
+        <img [src]="[unHeroe.img]" alt="avatar" />
+      </ion-avatar>
+      <ion-label>{{unHeroe.nombre}}</ion-label>
+    </ion-item>
+
+
+
+    <app-heroe *ngIf="tipo === 'detalle'" [unHeroe]="unHeroe"></app-heroe>
+    <ion-button (click)="navegarHeroe(unHeroe.id)">Ir al Heroe</ion-button>
+    <ion-button (click)="irFotos(unHeroe.id)">Galería De Fotos</ion-button>
+  </ion-item>
+</ion-list>

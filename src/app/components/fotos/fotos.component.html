@@ -1,0 +1,16 @@
+
+<!-- 
+<p>
+  fotos workssss!
+</p>
+-->
+<ion-list>
+  <ion-list-header>
+    <ion-label>Galería de Fotos</ion-label>
+  </ion-list-header>
+  <ion-item *ngFor="let unaFoto of unasFoto; let in dex">
+    <ion-card>
+      <img alt="Imagen del Heroe" [src]="[unaFoto.urlFoto]" />
+    </ion-card>
+  </ion-item>
+</ion-list>
