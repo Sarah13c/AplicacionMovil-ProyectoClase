@@ -112,7 +112,6 @@ export class FotosHeroeServiceService {
       urlFoto: 'https://wallpapersmug.com/download/1600x900/a70ccb/the-wolverine-marvel-artwork.jpg',
       id: 21,
     }
-
   ]
   
   constructor() { }
@@ -130,12 +129,10 @@ export class FotosHeroeServiceService {
 
   getFotosIdHeroe(idHeroe:number):FotoHeroe[]{
     let busquedaFotosHeroes: FotoHeroe[] = [];
-
+    
     for(let i = 0 ; i < this.fotosHeroes.length ; i++){
 
       let fotoheroeAComparar = this.fotosHeroes[i];
-
-
       if (fotoheroeAComparar.idHeroe == idHeroe ){
         busquedaFotosHeroes.push(fotoheroeAComparar);
       }
