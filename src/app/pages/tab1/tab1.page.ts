@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Heroe } from 'src/app/interfaces/heroes.interface';
+import { Heroe, HeroeBD } from 'src/app/interfaces/heroes.interface';
+import { HeroesBDService } from 'src/app/services/heroes-bd.service';
 import { HeroesServiceService } from 'src/app/services/heroes-service.service';
 
 @Component({
@@ -13,10 +14,17 @@ export class Tab1Page {
   unTipo:string ='lista';
 
 
-  constructor(private data:HeroesServiceService) {
-    this.unosHeroes = data.getHeroes();
+  misDatosHeroesBD:HeroeBD[]=[];
 
-    console.log("DATOS",this.unosHeroes);
+
+  constructor(//private data:HeroesServiceService,
+    //Inyectar nuevo servicio para BD
+     private databd:HeroesBDService) {
+    //this.unosHeroes = data.getHeroes();
+
+    console.log("hEROES db",this.misDatosHeroesBD);
+
+    this.getHeroesBD();
   }
 
   cambiarEvento(event:any){
@@ -26,8 +34,21 @@ export class Tab1Page {
     }
     else{
       this.unTipo = 'lista';
+    }
   }
-}
+
+  async getHeroesBD(){
+    await this.databd
+    .getHeroes()
+    .toPromise()
+    .then((data:any)=> {
+      this.misDatosHeroesBD = data.resp;
+      console.log(this.misDatosHeroesBD);
+    })
+  }
+
+
+
 
 
 

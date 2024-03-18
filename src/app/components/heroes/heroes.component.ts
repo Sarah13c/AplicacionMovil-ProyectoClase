@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, input } from '@angular/core';
 import { Router } from '@angular/router';
 import { FotoHeroe } from 'src/app/interfaces/fotosHeroe.interface';
-import { Heroe } from 'src/app/interfaces/heroes.interface';
+import { Heroe, HeroeBD } from 'src/app/interfaces/heroes.interface';
 
 @Component({
   selector: 'app-heroes',
@@ -10,7 +10,7 @@ import { Heroe } from 'src/app/interfaces/heroes.interface';
 })
 export class HeroesComponent  implements OnInit {
 
-  @Input () unosHeroes: Heroe [] = [];
+  @Input () unosHeroes: HeroeBD [] = [];
   
   @Input () tipo!: string;
 
