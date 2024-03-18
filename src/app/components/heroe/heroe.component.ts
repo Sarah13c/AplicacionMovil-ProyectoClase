@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Heroe } from 'src/app/interfaces/heroes.interface';
+import { Heroe, HeroeBD } from 'src/app/interfaces/heroes.interface';
 
 @Component({
   selector: 'app-heroe',
@@ -8,7 +8,7 @@ import { Heroe } from 'src/app/interfaces/heroes.interface';
   styleUrls: ['./heroe.component.scss'],
 })
 export class HeroeComponent  implements OnInit {
-  @Input() unHeroe!: Heroe;
+  @Input() unHeroe!: HeroeBD;
 
   constructor(private router:Router) { }
 
