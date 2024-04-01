@@ -31,4 +31,13 @@ export class HeroesBDService {
     );
   }
 
+
+  getFotosHeroe(idHeroe:string){
+    return this.http.get(`${URL_SERVICIO_HEROES}/multimedias/fotos/${idHeroe}`, {}).pipe(
+      map((res:any)=>{
+        console.log('FotoHeroe', res);
+        return res;
+      })
+    );
+  }
 }
