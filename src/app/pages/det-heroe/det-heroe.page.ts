@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Heroe, HeroeBD } from 'src/app/interfaces/heroes.interface';
+import { HeroeBD } from 'src/app/interfaces/heroes.interface';
 import { HeroesBDService } from 'src/app/services/heroes-bd.service';
-import { HeroesServiceService } from 'src/app/services/heroes-service.service';
+
 
 @Component({
   selector: 'app-det-heroe',
